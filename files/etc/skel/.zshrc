@@ -17,7 +17,7 @@ alias la='ls -A'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 # alias ..='cd ..'
-setopt autocd
+# setopt autocd
 alias mv='mv -i'
 alias rm='rm -i'
 alias ping="ping -c 3"
