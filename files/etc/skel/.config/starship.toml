@@ -1,0 +1,85 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = '''
+$username[](fg:#202027 bg:#17171b)$os[](fg:#17171b bg:#0b0b0e)$directory$fill$git_branch$git_state$git_metrics$git_status$hostname$time
+$status$character'''
+
+[os]
+disabled = false
+style = 'fg:white bg:#17171b'   #default     <----- CHANGE COLOR HERE
+# style = 'fg:#b281e2 bg:#17171b' #eos
+# style = 'fg:#cd749c bg:#17171b' #raspberry
+# style = 'fg:#7aed6f bg:#17171b' #htb
+format = '[ $name ]($style)'    #default
+# format = '[ Hack The Box ]($style)' #htb
+
+# Symbols: 󱕴      
+
+# ---- LINE 1 ----
+
+[username]
+style_user = 'fg:white bg:#202027'
+#style_root = 'red'
+format = '[ $user ]($style)'
+show_always = true
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+style = 'fg:white bg:#0b0b0e'
+format = '[ $path]($style)'
+
+[fill]
+symbol = ' '
+style = 'bg:#0b0b0e'
+
+
+# ---- RIGHT ----
+# $git_branch$git_commit$git_state$git_metrics$git_status
+
+[git_branch]
+style = 'fg:bright-purple bg:#0b0b0e'
+# format = '[on ](bg:#0b0b0e)[$symbol$branch(:$remote_branch)]($style)[ ](bg:#0b0b0e)'
+format = '[$symbol$branch(:$remote_branch)]($style)[ ](bg:#0b0b0e)'
+
+[git_state]
+disabled = true
+## todo enable and fix background
+
+[git_status]
+style = 'fg:red bg:#0b0b0e bold'
+format = '([\[$all_status$ahead_behind\] ]($style))'
+
+[hostname] # only used to print 'ssh' at the moment
+ssh_only = true
+ssh_symbol = 'ssh'
+style = 'fg:white bg:#0b0b0e'
+format = '[ $ssh_symbol ]($style)'
+
+[time]
+time_format = '%R'
+style = 'fg:#202027 bg:#0b0b0e'
+format = '[ $time ]($style)'
+disabled = false
+
+
+# ---- LINE 2 ----
+[sudo]
+format = '[$symbol]($style)'
+symbol = '󱕴'
+style = 'bright-blue'
+disabled = false
+
+[status]
+format = '[$status ]($style)'
+style = 'red'
+disabled = false
+
+[character]
+success_symbol = '[›](white)'
+error_symbol = '[›](white)'
+vimcmd_symbol = '[‹](white)'
+# configure vim  mode symbols
+

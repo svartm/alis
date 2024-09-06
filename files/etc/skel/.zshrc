@@ -26,5 +26,5 @@ alias ping="ping -c 3"
 # [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Starship prompt. Keep this at the bottom of the file.
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
