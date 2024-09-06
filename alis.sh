@@ -1720,6 +1720,7 @@ function provision() {
     print_step "provision()"
 
     (cd "$PROVISION_DIRECTORY" && cp -vr --parents . "${MNT_DIR}")
+#    cp -r "${MNT_DIR}/etc/skel" "${MNT_DIR}/home/$USER_NAME"
 }
 
 function vagrant() {
@@ -1869,6 +1870,9 @@ function main() {
     execute_step "partition"
     execute_step "install"
     execute_step "configuration"
+    if [ "$PROVISION" == "true" ]; then
+        execute_step "provision"
+    fi
     execute_step "users"
     if [ -n "$DISPLAY_DRIVER" ]; then
         execute_step "display_driver"
@@ -1892,9 +1896,9 @@ function main() {
         execute_step "display_manager"
     fi
     execute_step "packages"
-    if [ "$PROVISION" == "true" ]; then
-        execute_step "provision"
-    fi
+#    if [ "$PROVISION" == "true" ]; then
+#        execute_step "provision"
+#    fi
     if [ "$VAGRANT" == "true" ]; then
         execute_step "vagrant"
     fi
