@@ -11,7 +11,7 @@
   <property name="color-bold" type="string" value=""/>
   <property name="color-palette" type="string" value="rgb(10,11,17);rgb(174,99,199);rgb(0,205,0);rgb(0,144,140);rgb(57,57,219);rgb(119,0,221);rgb(0,232,232);rgb(229,229,229);rgb(26,30,45);rgb(227,150,255);rgb(0,255,0);rgb(99,176,176);rgb(51,146,255);rgb(155,128,255);rgb(139,233,253);rgb(255,255,255)"/>
   <property name="color-bold-is-bright" type="bool" value="false"/>
-  <property name="font-name" type="string" value="NotoSansM Nerd Font Mono Bold Semi-Condensed 10"/>
+  <property name="font-name" type="string" value="NotoSansM Nerd Font Regular 10"/>
   <property name="misc-always-show-tabs" type="bool" value="false"/>
   <property name="misc-bell" type="bool" value="false"/>
   <property name="misc-bell-urgent" type="bool" value="false"/>

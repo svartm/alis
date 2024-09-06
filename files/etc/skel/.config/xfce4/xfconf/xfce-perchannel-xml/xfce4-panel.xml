@@ -142,7 +142,11 @@
         <value type="string" value="16712150507.desktop"/>
       </property>
     </property>
-    <property name="plugin-26" type="string" value="whiskermenu"/>
+    <property name="plugin-26" type="string" value="whiskermenu">
+      <property name="button-title" type="string" value=" RiftOS  "/>
+      <property name="button-icon" type="string" value="/usr/share/rift/archlinux-icon.png"/>
+      <property name="show-button-title" type="bool" value="true"/>
+    </property>
     <property name="plugin-16" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
