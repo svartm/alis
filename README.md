@@ -1,11 +1,12 @@
 # ALIS - RiftOS
 
-Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/ariser-installer/alis) based on [picodotdev's ALIS](https://github.com/picodotdev/alis).
+Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/ariser-installer/alis) based on picodotdev's [original ALIS](https://github.com/picodotdev/alis).
 
-This repository contains the ALIS (Arch Linux Install Script) that is part of [RiftOS](https://github.com/svartm/rift). RiftOS is a personal project based on [Ariser](https://ariser.eu/), a configurable automatic terminal install method for ArchLinux.
+This repository contains the ALIS (Arch Linux Install Script) that is part of [RiftOS](https://github.com/svartm/rift). The RiftOS project is based on [Ariser](https://ariser.eu/), a configurable automatic terminal install method for Arch Linux. 
 
-Installation time depends on the configuration but should take less than 5 minutes after starting the script with a good internet connection.
+RiftOS is my custom tailored version of Arch Linux, largely inspired by [ArcoLinux](https://www.arcolinux.info/) and [EndeavourOS](https://endeavouros.com/). It started as a personal project for me to learn about all the parts that make up an Arch-based operating system, and to keep all my preferences and configurations in one easy-to-understand installer so that I can quickly set up new systems that work just the way I want out of the box. There is also room to expand on this project and make a more generic pre-configuration in the future, which would work for more users and use cases. Currently the scripts here are mainly meant for my personal use, but I welcome anyone insterested to use them in any way they wish, especially to learn from them.
 
+This version of ALIS is preconfigured to install xfce4 with the [juno ocean](https://github.com/EliverLara/Juno) theme and custom xfce4 configs. Configurations and themeing are also provided for tmux, starship, and neovim. (neovim configs still TODO as of writing this)
 
 ## ALIS
 More about ALIS: [picodotdev.github.io/alis](https://picodotdev.github.io/alis/)
