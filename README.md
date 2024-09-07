@@ -1,15 +1,15 @@
 # ALIS - RiftOS
 
-Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/ariser-installer/alis) based on picodotdev's [ALIS](https://github.com/picodotdev/alis).
+Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/ariser-installer/alis) based on [picodotdev's ALIS](https://github.com/picodotdev/alis).
 
 This repository contains the ALIS (Arch Linux Install Script) that is part of [RiftOS](https://github.com/svartm/rift). RiftOS is a personal project based on [Ariser](https://ariser.eu/), a configurable automatic terminal install method for ArchLinux.
 
 
 ## ALIS
 
-Arch Linux Install Script (or alis, also known as _the Arch Linux executable installation guide and wiki_) installs an unattended, automated and customized Arch Linux system.
+[Arch Linux Install Script](https://github.com/picodotdev/alis) (or alis, also known as _the Arch Linux executable installation guide and wiki_) installs an unattended, automated and customized Arch Linux system.
 
-alis is a simple Bash script developed from many Arch Linux Wiki pages that fully automates the installation of an [Arch Linux](https://archlinux.org/) system after booting from the original Arch Linux installation media.
+ALIS is a simple Bash script developed from many Arch Linux Wiki pages that fully automates the installation of an [Arch Linux](https://archlinux.org/) system after booting from the original Arch Linux installation media.
 
 It contains the same commands that you would type and execute one by one interactively to complete the installation. The only user intervention needed is to edit a configuration file to choose the installation options and preferences from partitioning, to encryption, bootloader, file system, language and keyboard mapping, desktop environment, kernels, packages to install and graphic drivers. This automation makes the installation easy and fast, as fast as your internet connection allows.
 
@@ -85,7 +85,7 @@ For new features, improvements and bugs, fill an issue in GitHub or make a pull 
 
 ## System installation TODO
 
-Download and boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following commands to start the installation.
+Build an ISO from the [Rift](https://github.com/svartm/rift) repository. (Optionally, download and boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>, then git clone this repository. After boot use the following commands to start the installation.
 
 Follow the <a href="https://wiki.archlinux.org/title/Arch_Linux">Arch Way</a> of doing things and learn what this script does. This will allow you to know what is happening.
 
@@ -96,9 +96,9 @@ Internet connection is required, with wireless WIFI connection see <a href="http
 ```
 #                         # Start the system with latest Arch Linux installation media
 # loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de
-# curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts
-# vim alis.conf           # Edit configuration and change variables values with your preferences (system configuration)
-# ./alis.sh               # Start installation
+# vim /alis/alis.conf     # Edit configuration and change variables values with your preferences (system configuration)
+# alis                    # Start installation
+#                         # Note that if you made any changes, pulling the newest files from github will overwrite them.
 ```
 
 **Advanced usage**
@@ -107,25 +107,26 @@ Internet connection is required, with wireless WIFI connection see <a href="http
 #                         # Start the system with latest Arch Linux installation media
 # loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de
 # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"          # (Optional) Connect to WIFI network. _ip link show_ to know WIFI_INTERFACE.
-# curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts
-# # curl -sL https://git.io/JeaH6 | bash                                                   # Alternative download URL with URL shortener
-# # curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash -s -- -h [HASH_COMMIT] # Use specific version of the script based on the commit hash
+# alis                    # Pull the newest changes (y) but don't run the script yet (n) if you wish to make changes to the configuration.
+# cd /alis                # Navigate to the alis directory
 # ./alis-asciinema.sh     # (Optional) Start asciinema video recording
 # vim alis.conf           # Edit configuration and change variables values with your preferences (system configuration)
 # vim alis-packages.conf  # (Optional) Edit configuration and change variables values with your preferences (packages to install)
 #                         # (The preferred way to install packages is after system installation, see Packages installation)
-# ./alis.sh               # Start installation
+# alis                    # Start installation. Don't pull the repository from github if you want to keep your modifications.
 # ./alis-reboot.sh        # (Optional) Reboot the system, only necessary when REBOOT="false"
 ```
+
 
 ## Package installation
 
 After the base Arch Linux system is installed, alis can install packages with pacman, Flatpak, SDKMAN and from AUR.
+It's recommended to install packages after the base installation and reboot, but if the `PACKAGES_INSTALL="true"` option is set in `alis.conf`, packages outlined in `alis-packages.conf` will be already installed during the installation process.
 
 ```
 #                                  # After system installation start a user session
-# curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts
-# # curl -sL https://git.io/JeaH6 | bash                                                   # Alternative download URL with URL shortener
+# git clone https://github.com/svartm/alis-rift.git    # clone this repository
+# cd alis-rift
 # ./alis-packages-asciinema.sh     # (Optional) Start asciinema video recording
 # vim alis-packages.conf           # Edit configuration and change variables values with your preferences (packages to install)
 # ./alis-packages.sh               # Start packages installation
