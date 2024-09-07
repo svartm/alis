@@ -4,8 +4,11 @@ Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/arise
 
 This repository contains the ALIS (Arch Linux Install Script) that is part of [RiftOS](https://github.com/svartm/rift). RiftOS is a personal project based on [Ariser](https://ariser.eu/), a configurable automatic terminal install method for ArchLinux.
 
+Installation time depends on the configuration but should take less than 5 minutes after starting the script with a good internet connection.
+
 
 ## ALIS
+More about ALIS: [picodotdev.github.io/alis](https://picodotdev.github.io/alis/)
 
 [Arch Linux Install Script](https://github.com/picodotdev/alis) (or alis, also known as _the Arch Linux executable installation guide and wiki_) installs an unattended, automated and customized Arch Linux system.
 
@@ -134,6 +137,8 @@ It's recommended to install packages after the base installation and reboot, but
 
 ## Recovery
 
+**Not tested with RiftOS, instructions from picodotdev's alis repository.** Adapt as needed.
+
 Boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following commands to start the recovery, this will allow you to enter in the arch-chroot environment.
 
 ```
@@ -172,89 +177,23 @@ $ ./alis-cloud-init-ssh.sh -i "${IP_ADDRESS}" -c "alis-config-efi-ext4-systemd.s
 
 ## Screenshots
 
-Once the installation ends, you will have a ready to use system with your choosen preferences including all the free software latest version you wish to do produtive task from browsing, multimedia and office programs, to programming languages, compilers and server software and tools for creative and artistic tasks.
+Once the installation ends, you will have a ready to use system based on the configuration provided.
 
-These are some desktop environments that can be installed.
+TODO 
 
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-gnome-thumb.jpg "Arch Linux with GNOME")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-gnome.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-kde-thumb.jpg "Arch Linux with KDE")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-kde.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-xfce-thumb.jpg "Arch Linux with XFCE")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-xfce.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-cinnamon-thumb.jpg "Arch Linux with Cinnamon")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-cinnamon.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-mate-thumb.jpg "Arch Linux with Mate")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-mate.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-lxde-thumb.jpg "Arch Linux with LXDE")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-lxde.jpg)
-[![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-root-password-thumb.png "Arch Linux unloking LUKS on boot")](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-root-password.png)
-
-## Video
-
-Arch Linux base installation installed in less than 4 minutes with a fiber internet connection and a NVMe SSD. Don't trust me? See the video.
-
-Type the system installation commands and wait to the installation complete. After a reboot the system is ready to use and customized with your choosen preferences.
-
-[![asciicast](https://asciinema.org/a/444025.png)](https://asciinema.org/a/444025)
-
-## How you can help
-
-* Test in VirtualBox and create an issue if something does not work, attach the main parts of the used configuration file and the error message
-* Create issues with new features
-* Send pull requests
-* Share it in social networks, forums, create a blog post or video about it
-* Send me an email, I like to read that the script is being used and is useful :). Which are your computer specs, which is your alis configuration, if is your personal or working computer, if all worked fine or some suggestion to improve the script
 
 ## Media reference
-
-* 2022.01 [Arch + Alis, Arco Linux](https://www.arcolinuxiso.com/aa/) ([video playlist](https://www.youtube.com/playlist?list=PLlloYVGq5pS7lMblPjiifVxxnMAqYzBU5))
-* 2020.07 [Arch installer - alis](https://r1ce.net/2020/07/07/arch-installer-alis/)
-* 2019.06 [Arch Linux OS Challenge: Install Arch 'The Easy Way' With These 2 Alternative Methods](https://www.forbes.com/sites/jasonevangelho/2019/06/10/arch-linux-os-challenge-2-alternatives-install-gui-script-easy/)
-
-## Alternatives
-
-There are other quite good similar projects that can be used as alternative to install a vanilla Arch Linux without any additions.
-
-* [Arch Installer](https://github.com/archlinux/archinstall) (archinstall) (maybe is the most relevant as is included in the official installation media)
-* [archfi](https://github.com/MatMoul/archfi/)
-* [Archlinux Ultimate Installer (aui)](https://github.com/helmuthdu/aui) (only accepts patches)
-
-Also, if you prefer to install an Arch Linux using a guided graphical installer you can choose an [Arch based distribution](https://wiki.archlinux.org/title/Arch-based_distributions#Active). 
-
-* [ArcoLinux](https://arcolinux.com/)
-* [Manjaro](https://manjaro.org/)
-* [EndeavourOS](https://endeavouros.com/)
-* [GarudaLinux](https://garudalinux.org/)
-* [Archlabs](https://archlabslinux.com/)
-* [RebornOS](https://rebornos.org/)
-* [BlackArch](https://blackarch.org/)
-
-Also and recommended for new Arch Linux newcomers to follow the Arch Way of doing things is a good way to use and learn about Arch. There are many guides out there, the official Arch Linux installation guide the first one. These are other good ones that explains step by step from instalation media creation to first boot and programs installation, all the necessary to start.
-
-* [The Arch Linux Handbook](https://www.freecodecamp.org/news/how-to-install-arch-linux/)
-
-## Test in VirtualBox with Packer
-
-VirtualBox and [Packer](https://packer.io/) are required.
-
-* Firmware: efi, bios
-* File system: ext4, btrfs, f2fs, xfs
-* Partition: luks, lvm
-* Bootloader: grub, refind, systemd
-* Desktop environment: gnome, kde, xfce, ...
-
-```
-$ ./alis-packer.sh -c alis-packer-efi-ext4-systemd.sh
-$ ./alis-packer.sh -c alis-packer-efi-ext4-systemd-gnome.sh
-$ ./alis-packer.sh -c alis-packer-efi-ext4-luks-lvm-grub.sh
-$ ./alis-packer.sh -c alis-packer-efi-btrfs-luks-lvm-systemd.sh
-$ ./alis-packer.sh -c alis-packer-efi-f2fs-luks-lvm-systemd.sh
-$ ./alis-packer.sh -c alis-packer-efi-ext4-grub-gnome.sh
-$ ./alis-packer.sh -c alis-packer-efi-ext4-grub-kde.sh
-$ ./alis-packer.sh -c alis-packer-efi-ext4-grub-xfce.sh
-```
-
-## Arch Linux Installation Media
-
-https://www.archlinux.org/download/
+* YouTube: [ArcoLinux : 3277 Make your own personal Arch Linux iso based on Ariser](https://youtu.be/P9bykLd5I8I?si=fit_moBH1S0woU9v)
+* YouTube: [ArcoLinux Ariser Playlist](https://www.youtube.com/playlist?list=PLlloYVGq5pS7lMblPjiifVxxnMAqYzBU5)
+* asciicast: [Arch Linux base installation installed with ALIS](https://asciinema.org/a/444025)
 
 ## Reference
 
+* https://ariser.eu/
+* https://github.com/ariser-installer/alis
+* https://picodotdev.github.io/alis/
+* https://github.com/picodotdev/alis
+* https://www.arcolinux.info/
 * https://archlinux.org/pacman/pacman.conf.5.html#_repository_sections
 * https://gitlab.archlinux.org/archlinux/archiso/-/blob/master/configs/releng/packages.x86_64
 * https://tldp.org/LDP/abs/html/
