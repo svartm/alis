@@ -1,8 +1,11 @@
-# alis
+# ALIS - RiftOS
 
-![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-badge.svg)
-![Bash](https://raw.githubusercontent.com/picodotdev/alis/master/images/sh-bash-badge.svg)
-![Shellcheck](https://github.com/picodotdev/alis/actions/workflows/shellcheck.yml/badge.svg)
+Fork of the [Ariser](https://ariser.eu/) project [ALIS](https://github.com/ariser-installer/alis) based on picodotdev's [ALIS](https://github.com/picodotdev/alis).
+
+This repository contains the ALIS (Arch Linux Install Script) that is part of [RiftOS](https://github.com/svartm/rift). RiftOS is a personal project based on [Ariser](https://ariser.eu/), a configurable automatic terminal install method for ArchLinux.
+
+
+## ALIS
 
 Arch Linux Install Script (or alis, also known as _the Arch Linux executable installation guide and wiki_) installs an unattended, automated and customized Arch Linux system.
 
@@ -23,41 +26,25 @@ Follow the [Arch Way](https://wiki.archlinux.org/title/Arch_Linux) of doing thin
 
 Please, don't ask for support for this script in Arch Linux forums, first read the [Arch Linux wiki](https://wiki.archlinux.org), the [Installation Guide](https://wiki.archlinux.org/title/Installation_guide) and the [General Recommendations](https://wiki.archlinux.org/title/General_recommendations), later compare those commands with the commands of this script.
 
-For new features, improvements and bugs, fill an issue in GitHub or make a pull request. You can test it in a virtual machine (strongly recommended) like [VirtualBox](https://www.virtualbox.org/) before you run it in real hardware. If you test it in real hardware, please send me an email to pico.dev@gmail.com with the machine description and tell me if something goes wrong or all works fine. [Pull request](https://github.com/picodotdev/alis/pulls) and [new feature request](https://github.com/picodotdev/alis/issues) are welcome!
+For new features, improvements and bugs, fill an issue in GitHub or make a pull request. You can test it in a virtual machine (strongly recommended) like [VirtualBox](https://www.virtualbox.org/) before you run it in real hardware.
 
 **Arch Linux Install Script (alis) is based on Arch Linux but is NOT approved, sponsored, or affiliated with Arch Linux or its related projects.**
 
 [![Arch Linux](https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux.svg "Arch Linux")](https://www.archlinux.org/)
 
-## Index
-
-* [Principles](https://github.com/picodotdev/alis#principles)
-* [Features](https://github.com/picodotdev/alis#features)
-* [System installation](https://github.com/picodotdev/alis#system-installation)
-* [Package installation](https://github.com/picodotdev/alis#packages-installation)
-* [Recovery](https://github.com/picodotdev/alis#recovery)
-* [SSH install and cloud-init](https://github.com/picodotdev/alis#ssh-install-and-cloud-init)
-* [Screenshots](https://github.com/picodotdev/alis#screenshots)
-* [Video](https://github.com/picodotdev/alis#video)
-* [How you can help](https://github.com/picodotdev/alis#how-you-can-help)
-* [Media reference](https://github.com/picodotdev/alis#media-reference)
-* [Alternatives](https://github.com/picodotdev/alis#alternatives)
-* [Test in VirtualBox with Packer](https://github.com/picodotdev/alis#test-in-virtualbox-with-packer)
-* [Arch Linux Installation Media](https://github.com/picodotdev/alis#arch-linux-installation-media)
-* [Reference](https://github.com/picodotdev/alis#reference)
 
 ## Principles
 
-* Use the original Arch Linux installation media
-* As unattended and automated as possible, requires as little interactivity as possible
-* Allow to customize the installation to cover the most common cases
-* Provide support for system recovery
-* Provide support for installation log
-* Use sane configuration default values
+* Meant to be used as part of [RiftOS](https://github.com/svartm/rift) ISO. Can be cloned into original Arch Linux installation media.
+* As unattended and automated as possible, requires as little interactivity as possible.
+* Allow to customize the installation to cover the most common cases.
+* Provide support for system recovery.
+* Provide support for installation log.
+* Pre-configured with my own configuration. May not be optimal for other users or use cases.
 
 ## Features
 
-* **System**: UEFI, BIOS
+* **System**: UEFI, BIOS (If bootloader is set to something other than auto, the installer may expect EFI.)
 * **Storage**: SATA, NVMe and MMC
 * **Encryption**: root partition encrypted and no encrypted
 * **Partition**: no LVM, LVM, LVM on LUKS, GPT on UEFI, MBR on BIOS, custom partition scheme and mountpoints
@@ -93,10 +80,10 @@ For new features, improvements and bugs, fill an issue in GitHub or make a pull 
 * **Packer support** for testing in VirtualBox
 * **Installation log** with all commands executed and output in a file and/or **asciinema video**
 * Wait after installation for an **abortable reboot**
-* **Use your own configuration**
-* Bash scripts validated by [Shellcheck](https://www.shellcheck.net/)
+* **Use your own configuration**. Files provisioned from `/files` including an `/etc/skel` directory for user configuration files.
+ * Bash scripts validated by [Shellcheck](https://www.shellcheck.net/)
 
-## System installation
+## System installation TODO
 
 Download and boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following commands to start the installation.
 
