@@ -179,7 +179,8 @@ $ ./alis-cloud-init-ssh.sh -i "${IP_ADDRESS}" -c "alis-config-efi-ext4-systemd.s
 
 Once the installation ends, you will have a ready to use system based on the configuration provided.
 
-TODO 
+[![RiftOS](https://raw.githubusercontent.com/svartm/alis-rift/main/images/Screenshot_2024-09-07.png "RiftOS with Xfce4 Sept 7 2024")]([https://raw.githubusercontent.com/picodotdev/alis/master/images/archlinux-gnome.jpg](https://raw.githubusercontent.com/svartm/alis-rift/main/images/Screenshot_2024-09-07.png))
+
 
 
 ## Media reference
