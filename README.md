@@ -99,7 +99,7 @@ Internet connection is required, with wireless WIFI connection see <a href="http
 
 ```
 #                         # Start the system with latest Arch Linux installation media
-# loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de
+# loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys fi, loadkeys es, loadkeys us, loadkeys de
 # vim /alis/alis.conf     # Edit configuration and change variables values with your preferences (system configuration)
 # alis                    # Start installation
 #                         # Note that if you made any changes, pulling the newest files from github will overwrite them.
@@ -109,15 +109,15 @@ Internet connection is required, with wireless WIFI connection see <a href="http
 
 ```
 #                         # Start the system with latest Arch Linux installation media
-# loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de
+# loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys fi, loadkeys es, loadkeys us, loadkeys de
 # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"          # (Optional) Connect to WIFI network. _ip link show_ to know WIFI_INTERFACE.
-# alis                    # Pull the newest changes (y) but don't run the script yet (n) if you wish to make changes to the configuration.
 # cd /alis                # Navigate to the alis directory
+# git reset --hard && git pull # (Optional) Pull the newest changes from this repository
 # ./alis-asciinema.sh     # (Optional) Start asciinema video recording
 # vim alis.conf           # Edit configuration and change variables values with your preferences (system configuration)
 # vim alis-packages.conf  # (Optional) Edit configuration and change variables values with your preferences (packages to install)
 #                         # (The preferred way to install packages is after system installation, see Packages installation)
-# alis                    # Start installation. Don't pull the repository from github if you want to keep your modifications.
+# alis                    # Start installation. Don't pull the repository from github at this stage if you want to keep your modifications.
 # ./alis-reboot.sh        # (Optional) Reboot the system, only necessary when REBOOT="false"
 ```
 
